@@ -1,0 +1,123 @@
+.game {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  visibility: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+
+  background-color: #00000060;
+  opacity: 0;
+  transition: 0.3s;
+  
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    width: 75%;
+    height: 75%;
+    min-height: 350px;
+    background-color: #fff;
+    transform: translateY(-75px);
+    transition: 0;
+    opacity: 0;
+    transition: 0.3s;
+  }
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    
+    .game {
+      
+      &__content {
+        opacity: 1;
+        transform: translateY(0);
+        transition: 0.8s;
+      }
+    }
+  }
+
+  &__slots {
+    display: flex;
+
+    .game {
+
+      &__slot {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px;
+        
+        width: 200px;
+        height: 250px;
+        background: #fafafa;
+        box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.4) inset;
+        overflow: hidden;
+        border-radius: 15px;
+      }
+
+      &__number {
+        font-size: 72px;
+      }
+    }
+  }
+
+  .game__buttons {
+    display: flex;
+    margin: 10px;
+
+    .game__button {
+      margin: 0 10px;
+      padding: 10px;
+      width: 160px;
+      height: 40px;
+      background-color: red;
+      color: #fff;
+
+      &:hover {
+        transform: none;
+      }
+
+      &:active {
+        transform: scale(0.9);
+      }
+
+      &--close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+
+        &::before {
+          content: "x";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+  }
+}
+
+.boxes {
+  transition: transform 1s ease-in-out;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 3rem;
+}

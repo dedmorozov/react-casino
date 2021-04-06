@@ -1,0 +1,63 @@
+.content {
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto 40px auto;
+    width: 400px;
+  }
+
+  &__button.button {
+    margin: 15px 0;
+  }
+}
+
+.table {
+  margin: 0 auto;
+  min-width: 600px;
+  background-color: #34495E;
+  color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  border-collapse: collapse;
+
+  tr {
+
+    &:hover {
+      background-color: rgb(62, 78, 99);
+    }
+  }
+  
+  td, th {    
+    display: table-cell;
+    margin: 20px;
+    padding: 20px;
+    min-width: 100px;
+    text-align: center;
+    
+    &:first-child {
+      padding-left: 0;
+    }
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+
+  th, td:before {
+    color: #dd5;
+  }
+
+  &__clickable {
+    position: relative;
+    cursor: pointer;
+
+    &:hover {
+      color: rgb(224, 224, 224);
+    }
+
+    &:focus {
+      color: #fff;
+    }
+  }
+}
